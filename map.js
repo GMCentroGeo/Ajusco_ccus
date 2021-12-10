@@ -25,8 +25,8 @@ var anp1 = L.layerGroup([]);
 var veget93 = L.layerGroup([]);
 var veget09 = L.layerGroup([]);
 var veget19 = L.layerGroup([]);
-var veget45t = L.layerGroup([]);
-var veget45r = L.layerGroup([]);
+var veget39t = L.layerGroup([]);
+var veget39r = L.layerGroup([]);
 
 var map = L.map('map',{
 	center:[19.206970551244304, -99.25794858801221],
@@ -50,9 +50,9 @@ var overlayMaps = {
 	"<b>1993</b>": veget93,
 	"<b>2009</b>": veget09,
 	"<b>2019</b>": veget19,
-	"<b>2045 tendencial</b>": veget45t,
-	"<b>2045 restrictivo</b>": veget45r,};
-/////*
+	"<b>2039 tendencial</b>": veget39t,
+	"<b>2039 restrictivo</b>": veget39r,};
+/*
   ///// CÓMO HACER UN DOBLE GRUPO DE CAPAS - overlayMaps 
 ///// cambiar nombre de capas
 var vegetacion = {
@@ -63,9 +63,9 @@ var vegetacion = {
 	"<b>2045 Restrictivo</b>": anp1
 };
 
-////*/
+*/
 
-L.control.layers(baseMaps,overlayMaps, vegetacion).addTo (map);
+L.control.layers(baseMaps,overlayMaps).addTo (map);
 
 
 ////////////////// ESTILO DE CAPAS
@@ -89,7 +89,7 @@ function cuencas_style(feature) {
         fillColor: 'white',
         weight: 1.5,
         opacity: 1,
-        color: 'red',
+        color: '#900C3F',
         dashArray: '1',
         fillOpacity: 0
     };
@@ -202,7 +202,11 @@ L.geoJson(estados, {
 	style: edo_style
 }).addTo(map);
 
+/////cuencas
 
+L.geoJson(cuencas, {
+	style: cuencas_style
+}).addTo(map);
 
 /////psah
 
@@ -244,23 +248,14 @@ L.geoJson(veg19, {
 }).addTo(veget19);
 
 /////  2045 tendencial
-L.geoJson(veg45t, {
+L.geoJson(veg39t, {
 	style: style_veg
-}).addTo(veget45t);
+}).addTo(veget39t);
 
 /////  2045 restrictivo
-L.geoJson(veg45r, {
+L.geoJson(veg39r, {
 	style: style_veg
-}).addTo(veget45r);
-
-
-
-/////cuencas
-
-L.geoJson(cuencas, {
-	style: cuencas_style
-}).addTo(map);
-
+}).addTo(veget39r);
 
 
 
@@ -273,9 +268,9 @@ map.on('overlayadd', function (eventLayer) {
 		veg2legend.addTo(map);
 	} else if (eventLayer.name == '<b>2019</b>') { 
 		veg2legend.addTo(map);
-	} else if (eventLayer.name == '<b>2045 tendencial</b>') { 
+	} else if (eventLayer.name == '<b>2039 tendencial</b>') { 
 		veg2legend.addTo(map);
-	} else if (eventLayer.name == '<b>2045 restrictivo</b>') { 
+	} else if (eventLayer.name == '<b>2039 restrictivo</b>') { 
 		veg2legend.addTo(map);
 	}
 });
@@ -287,9 +282,9 @@ map.on('overlayremove', function (eventLayer) {
 		veg2legend.remove(map);
 	} else if (eventLayer.name == '<b>2019</b>') { 
 		veg2legend.remove(map);
-	} else if (eventLayer.name == '<b>2045 tendencial</b>') { 
+	} else if (eventLayer.name == '<b>2039 tendencial</b>') { 
 		veg2legend.remove(map);
-	} else if (eventLayer.name == '<b>2045 restrictivo</b>') { 
+	} else if (eventLayer.name == '<b>2039 restrictivo</b>') { 
 		veg2legend.remove(map);
 	}
 });
