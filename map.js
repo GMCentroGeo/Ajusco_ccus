@@ -89,7 +89,7 @@ function cuencas_style(feature) {
         fillColor: 'white',
         weight: 1.5,
         opacity: 1,
-        color: '#900C3F',
+        color: '#900C3F',
         dashArray: '1',
         fillOpacity: 0
     };
