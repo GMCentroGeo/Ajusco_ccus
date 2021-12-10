@@ -1,2 +1,4 @@
-# Ajusco_ccus
-Visualizador de resultados de análisis de cambios de coberturas y usos de suelo, en microcuencas de la zona suroeste del suelo de conservación de la Ciudad de México
+# covid_smaes
+Visualizador de centros médicos de atención por COVID-19, en México
+
+https://gmcentrogeo.github.io/covid_smaes/
